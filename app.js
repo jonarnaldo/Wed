@@ -14,7 +14,7 @@ app.set('views', pub);
 app.set('view engine', 'jade');
 
 app.get('/', function(req,res){
-  res.render('./views/index', { title: "hey" });
+  res.render('./views/index', { title: "Jon and Xiao's wedding site" });
 });
 
 // catch 404
