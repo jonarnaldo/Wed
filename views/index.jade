@@ -4,13 +4,16 @@ block content
   div.container
     div.site-wrapper
       div.masthead.animated.fadeIn
-        div.navbar
+        div.nav
           ul
+            li 
+              a(href="#directions") Directions
             li
-             a(href="directions") Directions
-             a(href="program") Program
-             a(href="rsvp") RSVP
-             a(href="honeyfund") Honeyfund
+             a(href="#program") Program
+            li
+             a(href="#rsvp") RSVP
+            li
+             a(href="#registry") Registry
       div.animated.bounceInDown
         h1.text-center#heading Jon and Xiao
         div.non-semantic-protector
@@ -24,7 +27,24 @@ block content
         P 5111 SAN FELIPE RD, SAN JOSE, CA 95135
         P
         P RECEPTION AND DINNER TO FOLLOW
+    
+      div.program
+        a(name="program") 
+        include program
 
-  script(src='https://code.jquery.com/jquery-2.1.1.min.js')
-  script(src='https://hammerjs.github.io/dist/hammer.min.js')
+
+      div.directions
+        a(name="directions")
+        include directions
+
+      div.rsvp
+        a(name="rsvp") RSVP
+      div.honeyfund
+        a(name="registry") Registry
+
+  script(type='text/javascript' src='https://code.jquery.com/jquery-2.1.1.min.js')
+  script(type='text/javascript' src='https://hammerjs.github.io/dist/hammer.min.js')
+  script(type='text/javascript' src="http://cdnjs.cloudflare.com/ajax/libs/jquery-localScroll/1.3.5/jquery.localScroll.min.js")
+  script(type='text/javascript' src="http://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/1.4.11/jquery.scrollTo.min.js")
+  script(type='text/javascript' src='/Script/index.js')
 
