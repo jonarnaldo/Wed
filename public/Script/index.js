@@ -1,3 +1,3 @@
 $(document).ready(function() {
-    $('.nav').localScroll({duration:800});
+    $('.nav').localScroll({duration:400});
 });
