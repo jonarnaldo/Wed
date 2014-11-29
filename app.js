@@ -1,28 +1,37 @@
 
 // BASE SETUP
-var express = require('express')
+var express = require('express');
+var url = require('url');
 var app = express();
-var router = express.Router();
+// var router = express.Router();
 var port = process.env.PORT || 5000
 var path = require('path');
 var pub = __dirname;
 
 app.use(express.static(__dirname + '/public'));
 
-app.set('views', pub);
-
+app.set('views', path.join(__dirname, '/public/views'));
 app.set('view engine', 'jade');
 
+// ROUTES
 app.get('/', function(req,res){
-  res.render('./views/index', { title: "Jon and Xiao's wedding site" });
+  res.render('index', { title: "Jon and Xiao's wedding site" });
+});
+
+app.get('*', function (req,res,next) {
+  var err = new Error();
+  err.status = 404;
+  next(err);
 });
 
 // catch 404
-app.use(function(req, res, next) {
-  var error = new Error('Not Found');
-  error.status = 404;
-  next(error);
-})
+app.use(function(err, req, res, next) {
+  if(err.status !== 404) {
+    return next();
+  }
+
+  res.send(err.message || 'no can haz weddings here!');
+});
 
 
 // development error handler
