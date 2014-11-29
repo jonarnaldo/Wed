@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  div.container
+    div.site-wrapper
+      div.masthead.animated.fadeIn
+        div.navbar
+          ul
+            li
+              a(href='/') Home
+              a(href='directions') Directions
+              a(href='program') Program
+              a(href='rsvp') RSVP
+      div.animated.bounceInDown
+        h1 Are you coming?
+        input#rsvp Yes(placeholder='first name | last name')
+        div#yes
+          h1 Yes!
+        div#no
+          h1 No
+script(src='./bower_components/dist/jquery.min.js')
+script(src='https://hammerjs.github.io/dist/hammer.min.js')
